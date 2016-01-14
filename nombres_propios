@@ -1,0 +1,4 @@
+# Esta expresión regular encontrará nombres propios, iniciales y acrónimos en español e inglés.
+# Obtiene muchos falsos positivos por la letra inicial de las oraciones y
+# debe ser filtrado para utilizar la información.
+RNOMBRES='([A-Z](\.|[[:alpha:]])+( |del? |el |la |of |the )*)*([A-Z](\.|[[:alpha:]])+)'
