@@ -1,4 +1,9 @@
 # Esta expresión regular encontrará nombres propios, iniciales y acrónimos en español e inglés.
 # Obtiene muchos falsos positivos por la letra inicial de las oraciones y
 # debe ser filtrado para utilizar la información.
-RNOMBRES='([A-Z](\.|[[:alpha:]])+( |del? |el |la |of |the )*)*([A-Z](\.|[[:alpha:]])+)'
+NUMERAL='[0-9]+°?|[XVI]+'
+INICIAL='[A-ZÁÉÍÓÚÑ](\. )?'
+NOMBRE="$INICIAL"'[A-zÁÉÍÓÚáéíóúüÑñ]+'
+DELIM='((del?|el|la|of|the) |[ \-])*'
+
+NOMBRE_PROPIO="($NOMBRE($DELIM|$NUMERAL)*)*$NOMBRE($DELIM$NUMERAL)*"
